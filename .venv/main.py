@@ -21,7 +21,7 @@ Below you can find some of the apps I have built in Python.Feel free to contact 
 """
 st.write(content2)
 
-col3,col4=st.columns(2)
+col3,empty_col,col4=st.columns([1.5,0.5,1.5])
 
 df=pandas.read_csv("pythonProject/.venv/data.csv")
 
@@ -29,8 +29,14 @@ df=pandas.read_csv("pythonProject/.venv/data.csv")
 with col3:
     for index,row in df[1:10].iterrows():
         st.header(row["Column1"])
+        st.write(row["Column2"])
+        st.image("images/"+row["Column4"])
+        st.write(f"[Souce code]({row["Column3"]})")
 
 with col4:
     for index,row in df[10:].iterrows():
         st.header(row["Column1"])
+        st.write(row["Column2"])
+        st.image("images/" + row["Column4"])
+        st.write(f"[Souce code]({row["Column3"]})")
 
