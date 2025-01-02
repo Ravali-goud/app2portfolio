@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 col1,col2=st.columns(2)
 
 with col1:
-    image_path = 'pythonProject/images/photo.jpg'
+    image_path = os.path.join(os.getcwd(), "pythonProject/images/photo.jpg")
 
     if os.path.exists(image_path):
         image = Image.open(image_path)
@@ -32,7 +32,8 @@ st.write(content2)
 
 col3,empty_col,col4=st.columns([1.5,0.5,1.5])
 
-df=pandas.read_csv("pythonProject/.venv/data.csv")
+csv_path = os.path.join(os.getcwd(), "pythonProject/.venv/data.csv")
+df = pandas.read_csv(csv_path)
 
 
 with col3:
