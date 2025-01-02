@@ -1,11 +1,19 @@
 import streamlit as st
 import pandas
+from PIL import Image
+import os
 
 st.set_page_config(layout="wide")
 col1,col2=st.columns(2)
 
 with col1:
-    st.image("./images/photo.jpg", width=600)
+    image_path = './images/photo.jpg'
+
+    if os.path.exists(image_path):
+        image = Image.open(image_path)
+        st.image(image, width=600)
+    else:
+        st.error(f"Image not found at {image_path}")
 
 with col2:
     st.title("Ravali Goud")
