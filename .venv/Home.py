@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 col1,col2=st.columns(2)
 
 with col1:
-    image_path = './images/photo.jpg'
+    image_path = 'pythonProject/images/photo.jpg'
 
     if os.path.exists(image_path):
         image = Image.open(image_path)
@@ -39,13 +39,13 @@ with col3:
     for index,row in df[1:10].iterrows():
         st.header(row["Column1"])
         st.write(row["Column2"])
-        st.image("images/"+row["Column4"])
+        st.image("pythonProject/images/"+row["Column4"])
         st.write(f"[Souce code]({row["Column3"]})")
 
 with col4:
     for index,row in df[10:].iterrows():
         st.header(row["Column1"])
         st.write(row["Column2"])
-        st.image("images/" + row["Column4"])
+        st.image("pythonProject/images/" + row["Column4"])
         st.write(f"[Souce code]({row["Column3"]})")
 
