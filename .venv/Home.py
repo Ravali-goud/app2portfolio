@@ -36,6 +36,8 @@ csv_path = os.path.join(os.getcwd(), "pythonProject/.venv/data.csv")
 df = pandas.read_csv(csv_path)
 
 
+
+
 with col3:
     for index,row in df[1:10].iterrows():
         st.header(row["Column1"])
